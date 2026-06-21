@@ -1,0 +1,31 @@
+<header class="siteHeader">
+  <div class="wrap headerRow">
+    <a class="logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+  <img
+    class="logoImg"
+    src="https://static.destinationguides.ca/destinationguides-logo.png"
+    alt="DestinationGuides.ca"
+    height="22"
+    decoding="async"
+    fetchpriority="high"
+  />
+</a>
+
+    <nav class="siteNav" aria-label="Primary navigation">
+      <a href="{{ '/' | relative_url }}" class="navLink {% if page.url == '/' %}isActive{% endif %}">Home</a>
+      <a href="{{ '/countries/' | relative_url }}" class="navLink {% if page.url contains '/countries/' %}isActive{% endif %}">Countries</a>
+      <a href="{{ '/regions/' | relative_url }}" class="navLink {% if page.url contains '/regions/' %}isActive{% endif %}">Regions</a>
+      <a href="{{ '/cities/' | relative_url }}" class="navLink {% if page.url contains '/cities/' %}isActive{% endif %}">Cities</a>
+      <a href="{{ '/attractions/' | relative_url }}" class="navLink {% if page.url contains '/attractions/' %}isActive{% endif %}">Attractions</a>
+      <a href="{{ '/practical/' | relative_url }}" class="navLink {% if page.url contains '/practical/' %}isActive{% endif %}">Practical</a>
+    </nav>
+
+    <div class="headerTools">
+      <form class="searchMini" action="{{ '/search/' | relative_url }}">
+        <span aria-hidden="true">⌕</span>
+        <input name="q" placeholder="Search guides…" autocomplete="off">
+      </form>
+      <button class="iconBtn" type="button" title="Copy link" id="copyLinkBtn" aria-label="Copy link">⎘</button>
+    </div>
+  </div>
+</header>

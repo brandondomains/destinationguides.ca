@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% include guide-hero.html %}
+{% include section-nav.html %}
+<main class="wrap layout">
+  <article class="article">
+    {% if page.facts and page.facts.size > 0 %}
+    <section class="facts" aria-label="At a glance">
+      {% for f in page.facts %}
+      <div class="fact"><div class="factK">{{ f.k }}</div><div class="factV">{{ f.v }}</div></div>
+      {% endfor %}
+    </section>
+    {% endif %}
+    {{ content }}
+    {% if page.related and page.related.size > 0 %}
+    <section class="relatedBottom" id="related-guides" aria-label="Related guides">
+      <div class="relatedBottomHead">
+        <h2>Related guides</h2>
+        <p class="muted">Continue planning with nearby destinations and high-intent companion pages.</p>
+      </div>
+      <div class="relatedGrid">
+        {% for r in page.related %}
+          <a class="relCard" href="{{ r.url | relative_url }}">
+            <div class="relMeta">{{ r.type }}</div>
+            <div class="relTitle">{{ r.title }}</div>
+            <p class="relSub">{{ r.sub }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </article>
+</main>

@@ -1,0 +1,80 @@
+title: DestinationGuides.ca
+tagline: Content-first destination guides with a Canadian traveler lens.
+description: Content-first destination guides with a Canadian traveler lens.
+url: ""
+baseurl: ""
+timezone: America/Toronto
+lang: en-CA
+
+markdown: kramdown
+permalink: pretty
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  countries:
+    output: true
+    permalink: /countries/:slug/
+  regions:
+    output: true
+    permalink: /regions/:slug/
+  cities:
+    output: true
+    permalink: /cities/:slug/
+  attractions:
+    output: true
+    permalink: /attractions/:slug/
+  practical:
+    output: true
+    permalink: /practical/:slug/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/img/og-default.png
+
+  - scope:
+      path: ""
+      type: countries
+    values:
+      layout: country
+      guide_type: Country
+
+  - scope:
+      path: ""
+      type: regions
+    values:
+      layout: region
+      guide_type: Region
+
+  - scope:
+      path: ""
+      type: cities
+    values:
+      layout: city
+      guide_type: City
+
+  - scope:
+      path: ""
+      type: attractions
+    values:
+      layout: attraction
+      guide_type: Attraction
+
+  - scope:
+      path: ""
+      type: practical
+    values:
+      layout: practical
+      guide_type: Practical
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

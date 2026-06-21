@@ -1,0 +1,16 @@
+<section class="hero">
+  <div class="heroMedia" aria-hidden="true">
+    <div class="heroImg"></div>
+    <div class="heroOverlay"></div>
+  </div>
+  <div class="wrap heroInner">
+    {% if page.breadcrumbs %}{% include crumbs.html items=page.breadcrumbs %}{% endif %}
+    <h1 class="title">{{ page.title }}</h1>
+    <p class="dek">{{ page.dek | default: page.description }}</p>
+    <div class="metaRow">
+      <div class="metaItem"><div class="metaK">Guide type</div><div class="metaV">{{ page.guide_type }}</div></div>
+      <div class="metaItem"><div class="metaK">Updated</div><div class="metaV">{{ page.updated | default: site.time | date: "%Y-%m-%d" }}</div></div>
+      <div class="metaItem metaVerify"><div class="metaK">Time-sensitive</div><div class="metaV">Hours, prices, rules: <strong>Verify</strong></div></div>
+    </div>
+  </div>
+</section>

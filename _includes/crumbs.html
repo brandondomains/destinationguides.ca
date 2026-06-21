@@ -1,0 +1,13 @@
+<div class="crumbs" aria-label="Breadcrumb">
+  <a href="{{ '/' | relative_url }}">Home</a>
+  {% if include.items %}
+    {% for it in include.items %}
+      <span aria-hidden="true">›</span>
+      {% if it.url %}
+        <a href="{{ it.url | relative_url }}">{{ it.label }}</a>
+      {% else %}
+        <span class="crumbCurrent">{{ it.label }}</span>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>

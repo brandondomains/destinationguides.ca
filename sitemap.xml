@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ '/' | absolute_url }}</loc></url>
+  {% assign pages = site.pages | where_exp: "p", "p.url != '/sitemap.xml'" %}
+  {% for p in pages %}<url><loc>{{ p.url | absolute_url }}</loc></url>{% endfor %}
+  {% assign docs = "" | split: "" %}
+  {% assign docs = docs | concat: site.countries | concat: site.regions | concat: site.cities | concat: site.attractions | concat: site.practical %}
+  {% for d in docs %}<url><loc>{{ d.url | absolute_url }}</loc></url>{% endfor %}
+</urlset>

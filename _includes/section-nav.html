@@ -1,0 +1,9 @@
+{% if page.section_nav and page.section_nav.size > 0 %}
+<section class="sectionNav" id="sectionNav">
+  <div class="wrap navStrip">
+    {% for item in page.section_nav %}
+      <a class="secLink" href="#{{ item.id }}">{{ item.label }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
